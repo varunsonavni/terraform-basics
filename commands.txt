@@ -1,0 +1,27 @@
+
+#  terraform plan -var username=Varun password=hello { to give value in arguments }
+
+
+# This is the default file for tfvars(variables value) will be run when we user use terraform plan command
+# If we want to run a custom variables values i.e tfvars file then we use "terraform plan -var-file=demo.tfvars"
+
+
+
+# If we want to use a enviornment variable as a value 
+# We do export "TF_VAR_variablename=varun" then use variablename in variable below
+
+terraform.tfstate    // this file will have the backup of all the resources & other things which we have done.
+terraform init   // It will download all the providers which are used by .tf file 
+terraform apply –auto-approve  // It will not ask for yes/no after apply.
+terraform destroy  //  It will destroy all the resources which are created.
+
+terraform destroy --target resource_name.name_of_resource_in_tf // destroy only specified resource only.
+terraform destroy --target github_repository.repo-2-terraform
+
+terraform refresh // refresh the change whihc can be made directly to the resources.
+terraform fmt // Set the proper identations for all the terraform files.
+
+terraform taint resource_name  // it will taint the resource i.e whenever we do terraform apply that resource will deleted & 
+will created again
+
+
